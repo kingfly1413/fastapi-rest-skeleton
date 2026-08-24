@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./app.db
+      - SECRET_KEY=dev-change-me
+      - DEBUG=true
+    volumes:
+      - ./app.db:/app/app.db
